@@ -1,69 +1,85 @@
 import Image from "next/image";
+import { SubscribeForm } from "./subscribe-form";
+
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="relative flex min-h-screen flex-col overflow-hidden bg-white">
+      {/* ── Geometric decorations ──────────────────────────────────── */}
+
+      {/* Top-right cluster */}
+      <div aria-hidden className="pointer-events-none absolute right-0 top-0 flex w-48 flex-col items-end sm:w-64">
+        {/* row 1 */}
+        <div className="flex">
+          <div className="h-20 w-20 bg-neutral-100 sm:h-28 sm:w-28" />
+          <div className="h-20 w-20 bg-neutral-900 sm:h-28 sm:w-28" />
+        </div>
+        {/* row 2 — half squares (clipped) */}
+        <div className="flex">
+          <div className="h-10 w-20 overflow-hidden sm:h-14 sm:w-28">
+            <div className="h-20 w-20 bg-neutral-200 sm:h-28 sm:w-28" />
+          </div>
+          <div className="h-10 w-20 overflow-hidden sm:h-14 sm:w-28">
+            <div className="h-20 w-20 bg-neutral-400 sm:h-28 sm:w-28" />
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom-right cluster */}
+      <div aria-hidden className="pointer-events-none absolute bottom-0 right-0 flex w-56 flex-col items-end sm:w-72">
+        {/* row 1 */}
+        <div className="flex">
+          <div className="h-16 w-16 bg-neutral-300 sm:h-24 sm:w-24" />
+          <div className="h-16 w-16 bg-neutral-800 sm:h-24 sm:w-24" />
+        </div>
+        {/* row 2 */}
+        <div className="flex">
+          <div className="h-16 w-16 bg-neutral-500 sm:h-24 sm:w-24" />
+          <div className="h-16 w-16 bg-neutral-200 sm:h-24 sm:w-24" />
+          <div className="h-16 w-16 bg-neutral-700 sm:h-24 sm:w-24" />
+        </div>
+      </div>
+
+      {/* ── Content ────────────────────────────────────────────────── */}
+      <div className="relative z-10 flex flex-1 flex-col px-10 pb-10 pt-8 sm:px-16 sm:pb-12 sm:pt-10">
+
+        {/* Logo */}
+        <header>
+          <Image
+            src="/images/logo.png"
+            alt="Hydrolock"
+            width={1129}
+            height={1129}
+            priority
+            className="h-28 w-auto sm:h-32"
+          />
+        </header>
+
+        {/* Main content */}
+        <div className="mt-16 flex flex-col sm:mt-20">
+
+          {/* Accent-border label + descriptor */}
+          <div className="border-l-4 border-neutral-900 pl-4">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500">
+              Hydrolock
+            </p>
+            <p className="mt-2 max-w-sm text-sm leading-relaxed text-neutral-500">
+              Premium car care, made by us. Join our waitlist to be the first
+              to know when we launch.
+            </p>
+          </div>
+
+          {/* Coming Soon — primary headline */}
+          <h1 className="mt-6 text-6xl font-extrabold leading-[1.0] tracking-tight text-neutral-900 sm:text-7xl lg:text-8xl">
+            Coming<br />Soon.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+          {/* Form */}
+          <SubscribeForm className="mt-10" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+
+      </div>
+    </main>
   );
 }
