@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { SubscribeForm } from "./subscribe-form";
 
- 
+// ─── Crisp 100% Black SVG Cleaning Tool Illustrations ───────────────────────
+
 function SprayBottle({ className }: { className?: string }) {
   return (
     <svg
@@ -175,36 +176,36 @@ function Bucket({ className }: { className?: string }) {
 
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen min-h-[100dvh] flex-col items-center justify-center overflow-hidden bg-white text-black selection:bg-black selection:text-white">
-      {/* ── Background Vectors (100% Black, Responsive Layout) ── */}
+    <main className="relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-white text-black selection:bg-black selection:text-white">
+      {/* ── Background Vectors (100% Black, Tightly Positioned for Mobile) ── */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 z-0 overflow-hidden text-black"
       >
         {/* ── Top Edge Vectors ── */}
-        <SprayBottle className="absolute left-[1%] top-0 h-28 w-auto -translate-y-8 -rotate-12 sm:h-36 sm:-translate-y-10 md:left-[2%] md:h-44 md:-translate-y-12" />
-        <DetailBrush className="absolute left-[18%] top-0 h-32 w-auto -translate-y-8 sm:h-44 sm:-translate-y-10 md:h-56" />
-        <Sponge className="absolute left-[45%] top-0 h-14 w-auto -translate-x-1/2 -translate-y-4 rotate-6 sm:h-18 sm:-translate-y-5 md:left-[42%] md:h-22 md:-translate-y-6" />
-        <WaxBottle className="absolute right-[16%] top-0 h-24 w-auto -translate-y-8 rotate-8 sm:h-32 sm:-translate-y-10 md:h-42 md:-translate-y-14" />
-        <DetailBrush className="absolute right-[1%] top-0 h-28 w-auto -translate-y-6 rotate-12 sm:h-38 sm:-translate-y-8 md:right-[2%] md:h-52" />
+        <SprayBottle className="absolute left-[1%] top-0 h-20 w-auto -translate-y-8 -rotate-12 sm:h-32 sm:-translate-y-10 md:left-[2%] md:h-44 md:-translate-y-12" />
+        <DetailBrush className="absolute left-[16%] top-0 h-24 w-auto -translate-y-10 sm:h-40 sm:-translate-y-10 md:h-56" />
+        <Sponge className="absolute left-[45%] top-0 h-10 w-auto -translate-x-1/2 -translate-y-4 rotate-6 sm:h-16 sm:-translate-y-5 md:left-[42%] md:h-22 md:-translate-y-6" />
+        <WaxBottle className="absolute right-[16%] top-0 h-18 w-auto -translate-y-7 rotate-8 sm:h-30 sm:-translate-y-10 md:h-42 md:-translate-y-14" />
+        <DetailBrush className="absolute right-[1%] top-0 h-20 w-auto -translate-y-8 rotate-12 sm:h-36 sm:-translate-y-8 md:right-[2%] md:h-52" />
 
-        {/* ── Mid Edge Vectors (Hidden on mobile to keep text clean, shown on md+) ── */}
+        {/* ── Mid Edge Vectors (Hidden on mobile to preserve vertical space, shown on md+) ── */}
         <WashMitt className="hidden md:block absolute left-0 top-[28%] h-28 w-auto -translate-x-10 rotate-12 lg:h-34 lg:-translate-x-12" />
         <Bucket className="hidden md:block absolute left-0 top-[56%] h-30 w-auto -translate-x-12 -rotate-6 lg:h-36 lg:-translate-x-14" />
         <Squeegee className="hidden md:block absolute right-0 top-[34%] h-12 w-auto translate-x-6 -rotate-6 lg:h-16 lg:translate-x-8" />
         <SprayBottle className="hidden md:block absolute right-0 top-[58%] h-28 w-auto translate-x-8 rotate-10 lg:h-36 lg:translate-x-10" />
 
         {/* ── Bottom Edge Vectors ── */}
-        <WashMitt className="absolute bottom-0 left-[1%] h-24 w-auto translate-y-7 -rotate-8 sm:h-32 sm:translate-y-9 md:left-[2%] md:h-40 md:translate-y-12" />
-        <Squeegee className="absolute bottom-0 left-[20%] h-10 w-auto translate-y-3 sm:h-12 sm:translate-y-4 md:h-16 md:translate-y-5" />
-        <Sponge className="absolute bottom-0 left-1/2 h-14 w-auto -translate-x-1/2 translate-y-5 rotate-6 sm:h-18 sm:translate-y-7 md:h-22 md:translate-y-8" />
+        <WashMitt className="absolute bottom-0 left-[1%] h-18 w-auto translate-y-7 -rotate-8 sm:h-28 sm:translate-y-9 md:left-[2%] md:h-40 md:translate-y-12" />
+        <Squeegee className="absolute bottom-0 left-[20%] h-8 w-auto translate-y-3 sm:h-12 sm:translate-y-4 md:h-16 md:translate-y-5" />
+        <Sponge className="absolute bottom-0 left-1/2 h-10 w-auto -translate-x-1/2 translate-y-4 rotate-6 sm:h-16 sm:translate-y-7 md:h-22 md:translate-y-8" />
         <Bucket className="hidden sm:block absolute bottom-0 right-[35%] h-20 w-auto translate-y-6 -rotate-4 md:h-30 md:translate-y-8" />
-        <WaxBottle className="absolute bottom-0 right-[15%] h-24 w-auto translate-y-7 -rotate-6 sm:h-30 sm:translate-y-9 md:h-38 md:translate-y-12" />
-        <DetailBrush className="absolute bottom-0 right-[1%] h-28 w-auto translate-y-8 rotate-10 sm:h-36 sm:translate-y-10 md:right-[2%] md:h-48 md:translate-y-14" />
+        <WaxBottle className="absolute bottom-0 right-[15%] h-18 w-auto translate-y-7 -rotate-6 sm:h-26 sm:translate-y-9 md:h-38 md:translate-y-12" />
+        <DetailBrush className="absolute bottom-0 right-[1%] h-20 w-auto translate-y-8 rotate-10 sm:h-32 sm:translate-y-10 md:right-[2%] md:h-48 md:translate-y-14" />
       </div>
 
-      {/* ── Centered Content Area (Responsive & Always Centered) ── */}
-      <div className="relative z-10 flex w-full max-w-xl flex-1 flex-col items-center justify-center px-4 py-12 text-center sm:px-6 sm:py-16 md:py-20">
+      {/* ── Centered Content Area (Compact Spacing on Mobile) ── */}
+      <div className="relative z-10 flex w-full max-w-lg flex-1 flex-col items-center justify-center px-4 py-8 text-center sm:px-6 sm:py-12 md:py-16">
         {/* Logo */}
         <Image
           src="/images/logo.png"
@@ -212,28 +213,28 @@ export default function Home() {
           width={1129}
           height={1129}
           priority
-          className="h-20 w-auto drop-shadow-sm sm:h-28 md:h-32 lg:h-36"
+          className="h-16 w-auto drop-shadow-sm sm:h-24 md:h-30 lg:h-34"
         />
 
         {/* Eyebrow Label */}
-        <p className="mt-4 text-[0.65rem] font-bold uppercase tracking-[0.25em] text-neutral-600 sm:mt-5 sm:text-xs sm:tracking-[0.35em]">
+        <p className="mt-3 text-[0.62rem] font-bold uppercase tracking-[0.25em] text-neutral-500 sm:mt-4 sm:text-xs sm:tracking-[0.35em]">
           Premium Car Care
         </p>
 
-        {/* Dominant Headline */}
-        <h1 className="mt-2 text-4xl font-black leading-[0.95] tracking-tight text-black sm:text-6xl md:text-7xl lg:text-8xl">
+        {/* Headline */}
+        <h1 className="mt-1 text-4xl font-black leading-[0.92] tracking-tight text-black sm:mt-2 sm:text-6xl md:text-7xl lg:text-8xl">
           Coming
           <br />
           Soon.
         </h1>
 
         {/* Subtext */}
-        <p className="mt-3 max-w-xs text-xs leading-relaxed text-neutral-600 sm:max-w-sm sm:text-sm md:text-base">
+        <p className="mt-2.5 max-w-[280px] text-xs leading-relaxed text-neutral-600 sm:mt-3 sm:max-w-sm sm:text-sm md:text-base">
           We&apos;re almost there. Join our waitlist to be the first to know when we launch.
         </p>
 
         {/* Responsive Subscribe Form */}
-        <SubscribeForm className="mt-5 w-full max-w-md sm:mt-6" />
+        <SubscribeForm className="mt-4 w-full sm:mt-5" />
       </div>
     </main>
   );
