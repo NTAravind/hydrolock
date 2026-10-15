@@ -253,7 +253,7 @@ export default function Home() {
       </div>
 
       {/* ── Centered Content Area (Responsive & Clean) ── */}
-      <div className="relative z-10 flex w-full max-w-lg flex-1 flex-col items-center justify-center px-5 py-6 text-center sm:px-6 sm:py-10 md:py-12">
+      <div className="relative z-10 flex w-full max-w-lg flex-1 flex-col items-center justify-center px-5 py-8 text-center sm:px-6 sm:py-10 md:py-12">
         {/* Logo */}
         <Image
           src="/images/logo.png"
@@ -264,25 +264,25 @@ export default function Home() {
           className="h-24 w-auto drop-shadow-sm sm:h-32 md:h-36 lg:h-40"
         />
 
-        {/* Eyebrow Label */}
-        <p className="mt-3 text-[0.65rem] font-bold uppercase tracking-[0.25em] text-neutral-500 sm:mt-4 sm:text-xs sm:tracking-[0.35em]">
+        {/* Eyebrow Label — enlarged for clearer prominence */}
+        <p className="mt-5 text-xs font-bold uppercase tracking-[0.22em] text-neutral-800 sm:mt-6 sm:text-sm sm:tracking-[0.3em]">
           Premium Car Care
         </p>
 
         {/* Headline */}
-        <h1 className="mt-1 text-5xl font-black leading-[0.92] tracking-tight text-black sm:mt-2 sm:text-7xl md:text-8xl">
+        <h1 className="mt-3 text-5xl font-black leading-[0.92] tracking-tight text-black sm:mt-4 sm:text-7xl md:text-8xl">
           Coming
           <br />
           Soon.
         </h1>
 
         {/* Subtext */}
-        <p className="mt-3 max-w-[320px] text-xs leading-relaxed text-neutral-600 sm:mt-3.5 sm:max-w-md sm:text-sm md:text-base">
+        <p className="mt-4 max-w-[320px] text-xs leading-relaxed text-neutral-600 sm:mt-5 sm:max-w-md sm:text-sm md:text-base">
           We&apos;re almost there. Join our waitlist to be the first to know when we launch.
         </p>
 
         {/* Responsive Subscribe Form */}
-        <SubscribeForm className="mt-5 w-full sm:mt-6" />
+        <SubscribeForm className="mt-6 w-full sm:mt-8" />
       </div>
     </main>
   );
