@@ -84,7 +84,7 @@ export function Dashboard({ subscribers }: { subscribers: Subscriber[] }) {
             <TableHeader>
               <TableRow>
                 <TableHead className="w-16 pl-6">#</TableHead>
-                <TableHead>Email</TableHead>
+                <TableHead>Contact / Phone</TableHead>
                 <TableHead className="pr-6 text-right">Joined</TableHead>
               </TableRow>
             </TableHeader>

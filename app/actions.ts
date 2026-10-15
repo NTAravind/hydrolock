@@ -12,24 +12,39 @@ import {
 import type { FormState } from "@/lib/form-state";
 import { getAdminSupabase } from "@/lib/supabase";
 
-const emailSchema = z.email();
+const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]{7,16}$/;
+
+const contactSchema = z
+  .string()
+  .trim()
+  .min(7, "Please enter a valid contact number.")
+  .max(20, "Contact number is too long.")
+  .regex(phoneRegex, "Please enter a valid phone number (e.g. +91 96117 87246).");
 
 export async function joinWaitlist(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  const parsed = emailSchema.safeParse(String(formData.get("email") ?? "").trim());
+  const rawContact = String(
+    formData.get("contact") ?? formData.get("phone") ?? formData.get("email") ?? ""
+  ).trim();
+
+  const parsed = contactSchema.safeParse(rawContact);
 
   if (!parsed.success) {
-    return { status: "error", message: "Please enter a valid email address." };
+    return {
+      status: "error",
+      message:
+        parsed.error.issues[0]?.message ?? "Please enter a valid contact number.",
+    };
   }
 
-  const email = parsed.data.toLowerCase();
+  const contact = parsed.data;
 
   try {
     const { error } = await getAdminSupabase()
       .from("subscribers")
-      .upsert({ email }, { onConflict: "email", ignoreDuplicates: true });
+      .upsert({ email: contact }, { onConflict: "email", ignoreDuplicates: true });
 
     if (error) {
       return {
@@ -40,7 +55,7 @@ export async function joinWaitlist(
 
     return {
       status: "success",
-      message: "You're on the list. We'll be in touch soon!",
+      message: "You're on the list. We'll contact you soon!",
     };
   } catch {
     return {

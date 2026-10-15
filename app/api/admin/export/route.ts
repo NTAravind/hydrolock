@@ -14,7 +14,7 @@ export async function GET() {
 
   const subscribers = await getSubscribers();
 
-  const header = ["id", "email", "joined_at"].map(csvCell).join(",");
+  const header = ["id", "contact_number", "joined_at"].map(csvCell).join(",");
   const rows = subscribers.map((subscriber) =>
     [subscriber.id, subscriber.email, subscriber.created_at]
       .map(csvCell)

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const rubik = Rubik({
+  variable: "--font-rubik",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${montserrat.variable} h-full antialiased`}>
+    <html lang="en" className={`${rubik.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-neutral-900">
         {children}
       </body>
