@@ -17,12 +17,12 @@ export function SubscribeForm({ className }: { className?: string }) {
     return (
       <div
         className={cn(
-          "inline-flex items-center gap-2.5 rounded-full border border-black/15 bg-neutral-900 px-4 py-2 text-xs font-medium text-white shadow-sm sm:px-5 sm:py-2.5 sm:text-sm animate-in fade-in zoom-in-95 duration-200",
+          "inline-flex items-center gap-2.5 rounded-full border-2 border-black bg-black px-6 py-3 text-sm font-semibold text-white shadow-md animate-in fade-in zoom-in-95 duration-200",
           className
         )}
       >
-        <span className="flex size-4 items-center justify-center rounded-full bg-white text-black sm:size-5">
-          <Check className="size-2.5 sm:size-3" strokeWidth={3} />
+        <span className="flex size-5 items-center justify-center rounded-full bg-white text-black shrink-0">
+          <Check className="size-3.5" strokeWidth={3} />
         </span>
         <span>{state.message}</span>
       </div>
@@ -32,11 +32,11 @@ export function SubscribeForm({ className }: { className?: string }) {
   return (
     <form
       action={formAction}
-      className={cn("flex w-full max-w-md flex-col items-center gap-2", className)}
+      className={cn("flex w-full max-w-sm sm:max-w-md md:max-w-lg flex-col items-center gap-2.5", className)}
     >
-      <div className="relative flex w-full items-center rounded-full border border-black/80 bg-white p-1 shadow-sm transition-all focus-within:border-black focus-within:ring-2 focus-within:ring-black/10 sm:p-1.5">
-        <div className="pointer-events-none flex items-center pl-2.5 text-neutral-400 sm:pl-3">
-          <Mail className="size-3.5 sm:size-4 shrink-0" />
+      <div className="relative flex w-full items-center rounded-full border-2 border-black bg-white p-1.5 shadow-md transition-all focus-within:ring-4 focus-within:ring-black/10 sm:p-2">
+        <div className="pointer-events-none flex items-center pl-3 text-neutral-400 sm:pl-3.5">
+          <Mail className="size-4.5 sm:size-5 shrink-0" />
         </div>
         <input
           type="email"
@@ -46,27 +46,27 @@ export function SubscribeForm({ className }: { className?: string }) {
           aria-label="Email address"
           autoComplete="email"
           aria-invalid={state.status === "error"}
-          className="w-full min-w-0 bg-transparent px-2.5 py-1.5 text-xs text-black placeholder:text-neutral-400 focus:outline-none sm:px-3 sm:py-2 sm:text-sm"
+          className="w-full min-w-0 bg-transparent px-3 py-2 text-sm text-black placeholder:text-neutral-400 focus:outline-none sm:py-2.5 sm:text-base font-medium"
         />
         <button
           type="submit"
           disabled={pending}
           aria-label="Join waitlist"
-          className="flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-black px-3.5 py-2 text-xs font-semibold text-white transition-all hover:bg-neutral-800 active:scale-95 disabled:opacity-60 sm:px-5 sm:py-2.5 sm:text-sm cursor-pointer"
+          className="flex size-10 shrink-0 items-center justify-center rounded-full bg-black text-white transition-all hover:bg-neutral-800 active:scale-95 disabled:opacity-60 sm:h-11 sm:w-auto sm:px-5 sm:gap-2 cursor-pointer shadow-sm"
         >
           {pending ? (
-            <Loader2 className="size-3.5 animate-spin sm:size-4" />
+            <Loader2 className="size-4 animate-spin sm:size-4.5" />
           ) : (
             <>
-              <span>Notify Me</span>
-              <ArrowRight className="hidden size-3.5 sm:inline" />
+              <span className="hidden text-sm font-semibold sm:inline">Notify Me</span>
+              <ArrowRight className="size-4.5 sm:size-4" strokeWidth={2.5} />
             </>
           )}
         </button>
       </div>
 
       {state.status === "error" && (
-        <p className="text-center text-[0.7rem] font-medium text-red-600 sm:text-xs" role="alert">
+        <p className="text-center text-xs font-semibold text-red-600 sm:text-sm" role="alert">
           {state.message}
         </p>
       )}

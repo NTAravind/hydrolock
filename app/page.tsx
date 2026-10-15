@@ -202,48 +202,59 @@ function FoamBubbles({ className }: { className?: string }) {
 export default function Home() {
   return (
     <main className="relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-white text-black selection:bg-black selection:text-white">
-      {/* ── Background Vectors (100% Black, Rich Patterns across Viewport) ── */}
+      {/* ── Background Vectors (100% Black, Clean Layout with Zero Overlaps) ── */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 z-0 overflow-hidden text-black"
       >
-        {/* ── Top Edge Patterns ── */}
-        <SprayBottle className="absolute left-[1%] top-0 h-32 w-auto -translate-y-8 -rotate-12 sm:h-40 sm:-translate-y-10 md:left-[3%] md:h-48 md:-translate-y-12" />
-        <DetailBrush className="absolute left-[20%] top-0 h-36 w-auto -translate-y-10 sm:h-48 sm:-translate-y-12 md:h-60" />
-        <Sponge className="absolute left-[48%] top-0 h-16 w-auto -translate-x-1/2 -translate-y-5 rotate-6 sm:h-20 sm:-translate-y-6 md:left-[45%] md:h-24 md:-translate-y-7" />
-        <WaxBottle className="absolute right-[18%] top-0 h-28 w-auto -translate-y-8 rotate-8 sm:h-36 sm:-translate-y-10 md:h-44 md:-translate-y-14" />
-        <DetailBrush className="absolute right-[1%] top-0 h-32 w-auto -translate-y-8 rotate-12 sm:h-44 sm:-translate-y-10 md:right-[2%] md:h-56" />
+        {/* ── Top Edge Patterns (Spaced Cleanly) ── */}
+        <SprayBottle className="absolute left-[1%] top-0 h-28 w-auto -translate-y-8 -rotate-12 sm:h-38 sm:-translate-y-10 md:left-[3%] md:h-48 md:-translate-y-12" />
+        <DetailBrush className="hidden sm:block absolute left-[22%] top-0 h-44 w-auto -translate-y-12 md:h-56" />
+        <Sponge className="absolute left-1/2 top-0 h-14 w-auto -translate-x-1/2 -translate-y-5 rotate-6 sm:h-18 sm:-translate-y-6 md:h-22 md:-translate-y-7" />
+        <WaxBottle className="hidden sm:block absolute right-[20%] top-0 h-32 w-auto -translate-y-10 rotate-8 md:h-42 md:-translate-y-12" />
+        <DetailBrush className="absolute right-[2%] top-0 h-28 w-auto -translate-y-7 rotate-12 sm:h-38 sm:-translate-y-10 md:right-[3%] md:h-52" />
 
-        {/* ── Decorative Sparkles & Foam on Upper Half ── */}
-        <Sparkle className="absolute left-[12%] top-[14%] size-4 text-black sm:size-5" />
+        {/* ── Upper Accents ── */}
+        <Sparkle className="absolute left-[12%] top-[14%] size-3.5 text-black sm:size-5" />
         <Sparkle className="absolute right-[14%] top-[16%] size-3.5 text-black sm:size-5" />
-        <FoamBubbles className="absolute right-[5%] top-[22%] h-10 w-auto text-black sm:h-14" />
+        <FoamBubbles className="hidden sm:block absolute right-[6%] top-[22%] h-12 w-auto text-black" />
 
-        {/* ── Left & Right Side Patterns (Prominent on Mobile & Desktop) ── */}
-        <WashMitt className="absolute left-0 top-[26%] h-24 w-auto -translate-x-8 rotate-12 sm:h-30 sm:-translate-x-9 md:h-36 md:-translate-x-12" />
-        <Bucket className="absolute left-0 top-[62%] h-26 w-auto -translate-x-9 -rotate-6 sm:h-32 sm:-translate-x-10 md:h-38 md:-translate-x-12" />
-        <Sparkle className="absolute left-[7%] top-[50%] size-3.5 text-black sm:size-4" />
+        {/* ── Left & Right Side Patterns (Evenly Positioned on Vertical Axis) ── */}
+        <WashMitt className="absolute left-0 top-[24%] h-22 w-auto -translate-x-7 rotate-12 sm:h-28 sm:-translate-x-9 md:h-34 md:-translate-x-10" />
+        <Bucket className="absolute left-0 top-[58%] h-24 w-auto -translate-x-8 -rotate-6 sm:h-30 sm:-translate-x-10 md:h-36 md:-translate-x-12" />
+        <Sparkle className="absolute left-[8%] top-[44%] size-3 text-black sm:size-4" />
 
-        <Squeegee className="absolute right-0 top-[34%] h-12 w-auto translate-x-4 -rotate-6 sm:h-14 sm:translate-x-6 md:h-18 md:translate-x-8" />
-        <SprayBottle className="absolute right-0 top-[60%] h-26 w-auto translate-x-6 rotate-10 sm:h-32 sm:translate-x-8 md:h-38 md:translate-x-10" />
-        <Sparkle className="absolute right-[9%] top-[50%] size-4 text-black sm:size-5" />
+        <Squeegee className="absolute right-0 top-[30%] h-11 w-auto translate-x-4 -rotate-6 sm:h-14 sm:translate-x-6 md:h-16 md:translate-x-8" />
+        <SprayBottle className="absolute right-0 top-[58%] h-24 w-auto translate-x-6 rotate-10 sm:h-30 sm:translate-x-8 md:h-36 md:translate-x-10" />
+        <Sparkle className="absolute right-[8%] top-[46%] size-3 text-black sm:size-4" />
 
-        {/* ── Decorative Sparkles & Foam on Lower Half ── */}
-        <FoamBubbles className="absolute left-[6%] bottom-[20%] h-10 w-auto text-black sm:h-14" />
-        <Sparkle className="absolute right-[25%] bottom-[16%] size-3 text-black sm:size-4" />
+        {/* ── Lower Accents ── */}
+        <Sparkle className="absolute right-[22%] bottom-[18%] size-3 text-black sm:size-4" />
+        <FoamBubbles className="hidden sm:block absolute left-[5%] bottom-[24%] h-12 w-auto text-black" />
 
-        {/* ── Bottom Edge Patterns ── */}
-        <WashMitt className="absolute bottom-0 left-[1%] h-28 w-auto translate-y-7 -rotate-8 sm:h-34 sm:translate-y-9 md:left-[3%] md:h-44 md:translate-y-12" />
-        <Squeegee className="absolute bottom-0 left-[22%] h-12 w-auto translate-y-3 sm:h-14 sm:translate-y-4 md:h-18 md:translate-y-5" />
-        <Sponge className="absolute bottom-0 left-1/2 h-16 w-auto -translate-x-1/2 translate-y-6 rotate-6 sm:h-20 sm:translate-y-7 md:h-24 md:translate-y-8" />
-        <Bucket className="absolute bottom-0 right-[32%] h-24 w-auto translate-y-6 -rotate-4 sm:h-30 sm:translate-y-8 md:h-36" />
-        <WaxBottle className="absolute bottom-0 right-[15%] h-26 w-auto translate-y-7 -rotate-6 sm:h-32 sm:translate-y-9 md:h-40 md:translate-y-12" />
-        <DetailBrush className="absolute bottom-0 right-[1%] h-30 w-auto translate-y-8 rotate-10 sm:h-40 sm:translate-y-10 md:right-[2%] md:h-52 md:translate-y-14" />
+        {/* ── Bottom Edge Patterns (Dedicated Left, Center & Right on Mobile — Zero Collisions) ── */}
+        {/* Bottom Left Corner: Wash Mitt */}
+        <WashMitt className="absolute bottom-0 left-[2%] h-24 w-auto translate-y-6 -rotate-12 sm:h-32 sm:translate-y-8 md:left-[3%] md:h-40 md:translate-y-10" />
+
+        {/* Bottom-mid Left: Squeegee (visible on tablet+) */}
+        <Squeegee className="hidden sm:block absolute bottom-0 left-[22%] h-12 w-auto translate-y-3 sm:translate-y-4 md:h-16 md:translate-y-5" />
+
+        {/* Bottom Center: Sponge (centered cleanly with comfortable breathing room) */}
+        <Sponge className="absolute bottom-0 left-1/2 h-12 w-auto -translate-x-1/2 translate-y-5 rotate-6 sm:h-16 sm:translate-y-6 md:h-20 md:translate-y-7" />
+
+        {/* Bottom-mid Right: Bucket (visible on desktop) */}
+        <Bucket className="hidden md:block absolute bottom-0 right-[34%] h-28 w-auto translate-y-6 -rotate-4 md:h-32 md:translate-y-8" />
+
+        {/* Bottom Right-mid: Wax Bottle (visible on tablet+) */}
+        <WaxBottle className="hidden sm:block absolute bottom-0 right-[18%] h-28 w-auto translate-y-6 -rotate-6 md:h-36 md:translate-y-9" />
+
+        {/* Bottom Right Corner: Detail Brush */}
+        <DetailBrush className="absolute bottom-0 right-[3%] h-26 w-auto translate-y-7 rotate-12 sm:h-34 sm:translate-y-9 md:right-[3%] md:h-44 md:translate-y-10" />
       </div>
 
-      {/* ── Centered Content Area (Bigger Logo, Balanced Spacing) ── */}
+      {/* ── Centered Content Area (Responsive & Clean) ── */}
       <div className="relative z-10 flex w-full max-w-lg flex-1 flex-col items-center justify-center px-5 py-6 text-center sm:px-6 sm:py-10 md:py-12">
-        {/* Bigger Logo */}
+        {/* Logo */}
         <Image
           src="/images/logo.png"
           alt="Hydrolock"
