@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { SubscribeForm } from "./subscribe-form";
 
-// ─── Crisp 100% Black SVG Cleaning Tool Illustrations ───────────────────────
-
+ 
 function SprayBottle({ className }: { className?: string }) {
   return (
     <svg
