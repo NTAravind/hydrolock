@@ -30,6 +30,11 @@ export default function Home() {
           Premium Car Care
         </p>
 
+        {/* Tagline */}
+        <p className="mt-2 text-sm font-medium italic text-neutral-500 sm:text-base md:text-lg tracking-wide">
+          Premium car care products with affordable prices
+        </p>
+
         {/* Headline */}
         <h1 className="mt-3 text-5xl font-black italic leading-[0.92] tracking-tight text-black sm:mt-4 sm:text-7xl md:text-8xl">
           Coming
